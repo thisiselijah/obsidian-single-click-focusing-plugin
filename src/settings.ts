@@ -45,7 +45,6 @@ export class SingleClickFocusSettingTab extends PluginSettingTab {
 				slider
 					.setLimits(50, 500, 50)
 					.setValue(this.plugin.settings.fileFocusDelay)
-					.setDynamicTooltip()
 					.onChange(async (value) => {
 						this.plugin.settings.fileFocusDelay = value;
 						await this.plugin.saveSettings();

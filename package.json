@@ -1,6 +1,6 @@
 {
 	"name": "single-click-focusing",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "Allows focusing files and folders in the file explorer with a single left click.",
 	"main": "main.js",
 	"type": "module",

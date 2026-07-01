@@ -9,8 +9,6 @@ export default class SingleClickFocusPlugin extends Plugin {
 		await this.loadSettings();
 		this.addSettingTab(new SingleClickFocusSettingTab(this.app, this));
 
-		console.log('single-click-focus: plugin loaded');
-
 		this.registerDomEvent(activeDocument, 'click', (evt: MouseEvent) => {
 			if (evt.button !== 0) return;
 
@@ -19,7 +17,6 @@ export default class SingleClickFocusPlugin extends Plugin {
 			// --- Files ---
 			const fileTitle = target.closest('.nav-file-title') as HTMLElement;
 			if (fileTitle && this.settings.enableForFiles) {
-				console.log('single-click-focus: file clicked');
 				// Let Obsidian open the file, then focus the item via internal API
 				const dataPath = fileTitle.getAttribute('data-path');
 				if (dataPath) {
@@ -42,7 +39,6 @@ export default class SingleClickFocusPlugin extends Plugin {
 				// Block the click so the folder doesn't toggle
 				evt.stopPropagation();
 				evt.preventDefault();
-				console.log('single-click-focus: folder name clicked, toggle blocked');
 
 				const dataPath = folderTitle.getAttribute('data-path');
 				if (dataPath) {
@@ -66,13 +62,20 @@ export default class SingleClickFocusPlugin extends Plugin {
 		// Make the file explorer the active leaf
 		this.app.workspace.setActiveLeaf(feLeaf, { focus: true });
 
-		const feView = feLeaf.view as any; // eslint-disable-line @typescript-eslint/no-explicit-any
+		// Define an interface for the internal Obsidian FileExplorerView
+		interface FileExplorerView {
+			fileItems?: Record<string, unknown>;
+			tree?: {
+				setFocusedItem?: (item: unknown) => void;
+			};
+		}
+
+		const feView = feLeaf.view as unknown as FileExplorerView;
 
 		// Look up the item and focus it via the tree API
 		const fileItem = feView.fileItems?.[dataPath];
 		if (fileItem && feView.tree?.setFocusedItem) {
 			feView.tree.setFocusedItem(fileItem);
-			console.log('single-click-focus: focused item via tree.setFocusedItem:', dataPath);
 		}
 	}
 
