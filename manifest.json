@@ -1,0 +1,11 @@
+{
+	"id": "single-click-focusing",
+	"name": "Single Click Focusing",
+	"version": "1.0.4",
+	"minAppVersion": "1.0.0",
+	"description": "Allows focusing files and folders in the file explorer with a single left click.",
+	"author": "thisiselijah",
+	"authorUrl": "https://github.com/thisiselijah",
+	"fundingUrl": "",
+	"isDesktopOnly": false
+}
