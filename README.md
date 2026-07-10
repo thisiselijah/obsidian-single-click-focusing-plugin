@@ -28,8 +28,6 @@ Allows focusing files and folders in the file explorer with a single left click.
 
 ## Star History
 
-## Star History
-
 <a href="https://www.star-history.com/?repos=thisiselijah%2Fobsidian-single-click-focusing-plugin&type=timeline&legend=top-left">
  <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=thisiselijah/obsidian-single-click-focusing-plugin&type=timeline&theme=dark&legend=top-left&sealed_token=SsoXFS0vv-TmLcEfnhRXlAyvTEwnbc6WwSyi49iv5kLXfwfjYPRHkz6LRiwQDDB5Afy05MypySCjZny7E6w5X7Uuv29SjXkLRFdlFAGH3I5ERtUFQs15Bclm9j0BKbbkHGatP6v_cLEADLY1vG4gFtY0g1ah7uN64Y97EXINeGnwkVcsy9JRblonCwmP" />
